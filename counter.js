@@ -33,4 +33,4 @@ counter.on("message", async message => {
   }
 })
 
-counter.login("NTc2NDk0OTA5NzYzMjIzNTUy.Xe-sWg.1qx3Ge4awQCAP1o4QQoGgBWyC3A");
+counter.login("");
