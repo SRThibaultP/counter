@@ -2,18 +2,14 @@ const Discord = require("discord.js");
 
 const counter = new Discord.Client();
 
-async function init(){
-   await sleep(1000)
-}
-function sleep(ms){
-    return new Promise(resolve=>{
-        setTimeout(resolve,ms)
-    })
-}
-
 counter.on("ready", async () => {
   console.log(`${counter.user.username} est en ligne !`);
+  counter.user.setActivity("🐝 Rasphonney");
 });
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 counter.on("message", async message => {
   const prefix = "/";
@@ -22,7 +18,7 @@ counter.on("message", async message => {
 
   if(userTxt === `${prefix}start`) {
     msg = new Discord.RichEmbed()
-    .setDescription("WORLD PREMIERE");
+    .setDescription("**WORLD PREMIERE**");
     message.channel.send(msg);
     i=10;
     while (i != 0) {
@@ -30,12 +26,11 @@ counter.on("message", async message => {
       .setTitle("World Premiere")
       .setDescription(i);
       message.channel.send(msg);
+      console.log(i);
       i--;
-      sleep(1000);
+      await sleep (2000);
     }
   }
 })
 
-
-
-counter.login("");
+counter.login("NTc2NDk0OTA5NzYzMjIzNTUy.Xe-sWg.1qx3Ge4awQCAP1o4QQoGgBWyC3A");
